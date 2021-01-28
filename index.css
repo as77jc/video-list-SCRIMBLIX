@@ -1,0 +1,135 @@
+@import url('https://fonts.googleapis.com/css2?family=Lato:ital,wght@0,300;0,400;0,700;0,900;1,700;1,900&display=swap');
+
+body {
+    max-width: 1200px;
+    margin: 0 auto;
+    background: #081c15;
+    padding: 0 1em 3em;
+    font-family: Lato, sans-serif;
+    min-width: 400px;
+    background-image:  
+                linear-gradient(45deg, rgba(0, 0, 0, 0.62), 
+                rgba(0, 0, 32, 0.68)), 
+                url( 
+                'https://dkr0pu7ej5xex.cloudfront.net/wp-content/uploads/2017/04/24135159/Netflix-Background.jpg');
+    background-size: cover;
+}
+
+.main-title {
+    color: #fff;
+    padding: 1.5em 0 10em;
+    display: flex;
+    justify-content: space-between;
+}
+
+.main-title img {
+    width: 30%;
+    max-width: 250px;
+    min-width: 150px;
+    margin-left: 1em;
+}
+
+.main-title a {
+    margin-right: 1em;
+    width: 10%;
+    max-width: 70px;
+    background: #e5383b;
+    color: #fff;
+    text-decoration: none;
+    font-weight: 700;
+    align-self: center;
+    text-align: center;
+    padding: .8em 1em;
+    letter-spacing: 1.5px;
+    transition: .5s;
+}
+
+.main-title a:hover {
+    background: #fff;
+    color: #e5383b;
+}
+
+
+.container {
+    width: 100%;
+    display: grid;
+    grid-gap: 1em;
+    grid-template-columns: repeat(auto-fit, minmax(250px, auto));
+}
+
+.each-movie {
+    align-items: center;
+    padding: 1em;
+    background: #fff;
+    display: grid;
+    grid-template-areas: 
+            "image"
+            "title"
+            "rating"
+            "sub-info";
+    grid-template-rows: 80% 10% 5% 5%;
+    box-shadow: 0 0 10px rgba(255, 255, 255, 0.6),
+                0 0 5px rgba(255, 255, 255, 0.9);
+    overflow: hidden;
+}
+
+.each-movie img {
+    grid-area: image;
+    align-self: start;
+    justify-self: center;
+    max-width: 100%;
+    max-height: 100%;
+    transition: .8s;
+    
+    filter: 
+            url("data:image/svg+xml;utf8,<svg xmlns=\'http://www.w3.org/2000/svg\'><filter id=\'grayscale\'><feColorMatrix type=\'matrix\' values=\'0.3333 0.3333 0.3333 0 0 0.3333 0.3333 0.3333 0 0 0.3333 0.3333 0.3333 0 0 0 0 0 1 0\'/></filter></svg>#grayscale");
+    filter: gray;
+    -webkit-filter: grayscale(90%);
+}
+
+.each-movie img:hover {
+    transform: scale(1.01);
+    filter: none;
+    -webkit-filter: grayscale(0%);
+}
+
+.title {
+    grid-area: title;
+    margin: 0;
+    padding-top: 0.8em;
+    text-align: center;
+    color: #03045e;
+    border-top: 4px solid #820263;
+}
+
+.rating {
+    grid-area: rating;
+    text-align: center;
+}
+ .fa {
+     cursor: pointer;
+ }
+ 
+.checked {
+    color: orange;
+}
+
+.sub-info {
+    grid-area: sub-info;
+    display: flex;
+    justify-content: space-between;
+    color: #006466;
+}
+
+.sub-info span {
+    font-weight: 900;
+    color: #144552;
+}
+
+button {
+    background: none;
+    border: none;
+    margin: 0;
+    padding: 0;
+    cursor: pointer;
+}
