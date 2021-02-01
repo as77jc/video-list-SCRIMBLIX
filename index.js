@@ -14,8 +14,12 @@ async function getMovie () {
     const html = moveData.map(movie => {
         return `
         <div class='each-movie'>
-            <img src=${movie.Poster} alt=${movie.Title} />
-            <h4 class='title'>Movie Title: ${movie.Title}</h4>
+            <a href='https://www.imdb.com/title/${movie.imdbID}/' target='_blank'>
+                <img src=${movie.Poster} alt=${movie.Title} />
+            </a>
+            <a href='https://www.imdb.com/title/${movie.imdbID}/' target='_blank'>
+                <h4 class='title'>Movie Title: ${movie.Title}</h4>
+            </a>
             <div class='rating'>
                 <i 
                     class="fa fa-star"
@@ -45,7 +49,9 @@ async function getMovie () {
             </div>
             <div class='sub-info'>
                 <p><em>Year:</em> <span>${movie.Year}</span></p>
-                <p><em>imdbID:</em> <span>${movie.imdbID}</span></p>
+                <a href='https://www.imdb.com/title/${movie.imdbID}/' target='_blank'>
+                    <p><em>imdbID:</em> <span>${movie.imdbID}</span></p>
+                </a>
             </div>
         </div>
         `;
